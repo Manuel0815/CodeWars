@@ -112,7 +112,7 @@ def productFib(prod):
     i2 = 1
     while i1*i2 < prod:
         tmp = i2
-        i2 = i1 + i2
+        i2 = i1 + i2 # better: i1, i2 = i2, i1 + i2
         i1 = tmp
     if (i1*i2 == prod):
         return [i1, i2, True]
@@ -120,3 +120,11 @@ def productFib(prod):
         return [i1, i2, False]
 
 print productFib(4895)
+
+def series_sum(n):
+    s = 0.0
+    for i in range(n):
+        s += 1.0 / (1 + i*3)
+    return format(s, ".2f")
+
+print series_sum(1)
