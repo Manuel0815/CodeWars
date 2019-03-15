@@ -106,3 +106,17 @@ def find_uniq(arr):
             return n   # n: unique integer in the array
 
 print find_uniq([ 1, 1, 1, 2, 1, 1 ])
+
+def productFib(prod):
+    i1 = 0
+    i2 = 1
+    while i1*i2 < prod:
+        tmp = i2
+        i2 = i1 + i2
+        i1 = tmp
+    if (i1*i2 == prod):
+        return [i1, i2, True]
+    else:
+        return [i1, i2, False]
+
+print productFib(4895)
