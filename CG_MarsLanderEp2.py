@@ -25,5 +25,6 @@ while True:
     powerNew = 0
     if v_speed <= -40:
         powerNew = 4
-    # 2 integers: rotate power. rotate is the desired rotation angle (should be 0 for level 1), power is the desired thrust power (0 to 4).
-    print("0 " + str(powerNew))
+
+    # rotate power. rotate is the desired rotation angle. power is the desired thrust power.
+    print("-20 " + str(powerNew))
