@@ -5,10 +5,22 @@ import math
 # the standard input according to the problem statement.
 
 surface_n = int(input())  # the number of points used to draw the surface of Mars.
+landing_zone_y, landing_zone_x_start, landing_zone_x_end = 0,0,0
+tmp_y = -1
+tmp_x = -1
 for i in range(surface_n):
     # land_x: X coordinate of a surface point. (0 to 6999)
     # land_y: Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
     land_x, land_y = [int(j) for j in input().split()]
+    if land_y == tmp_y:
+        landing_zone_y = land_y
+        landing_zone_x_start = tmp_x
+        landing_zone_x_end = land_x
+        # break
+    tmp_y = land_y
+    tmp_x = land_x
+
+landing_zone_x_center = (landing_zone_x_start + landing_zone_x_end) / 2
 
 # game loop
 while True:
@@ -22,9 +34,9 @@ while True:
     # Write an action using print
     # To debug: print("Debug messages...", file=sys.stderr)
 
-    powerNew = 0
+    power_new = 0
     if v_speed <= -40:
-        powerNew = 4
+        power_new = 4
 
     # rotate power. rotate is the desired rotation angle. power is the desired thrust power.
-    print("-20 " + str(powerNew))
+    print("-10" + " " + str(power_new))
